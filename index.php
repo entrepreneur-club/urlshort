@@ -6,7 +6,9 @@ $urls = array(
     # startup speed dating
     'ssd' => 'http://ssd.entrepreneur-club.org/',
     # ec blog
-    'blog' => 'http://blog.entrepreneur-club.org/'
+    'blog' => 'http://blog.entrepreneur-club.org/',
+    # github page
+    'git' => 'https://github.com/entrepreneur-club/'
 );
 
 # CHANGE NOTHING BELOW HERE
