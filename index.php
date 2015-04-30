@@ -1,32 +1,27 @@
 <?php
+    define('ERROR_MSG', "An error occured. Please notify `it at entrepreneur-club.org`\n");
+    define('DEFAULT_URL', 'http://entrepreneur-club.org/');
+    define('NOTFOUND_URL', 'http://entrepreneur-club.org/notfound');
 
+    @$file = file('urls.txt') or die(ERROR_MSG);
+    $urls = array();
+    foreach($file as $line) {
+        $line = trim($line);
+        if(empty($line) or $line[0] == '#') {
+            continue;
+        }
+        $split = explode(':', $line, 2);
+        $urls[trim($split[0])] = trim($split[1]);
+    }
 
-# DEFINE NEW URLS HERE
-$urls = array(
-    # startup speed dating
-    'ssd' => 'http://ssd.entrepreneur-club.org/',
-    # ec blog
-    'blog' => 'http://blog.entrepreneur-club.org/',
-    # github page
-    'git' => 'https://github.com/entrepreneur-club/',
-    # Ideation - Mobility & Transport Workshop
-    'idea' => 'https://docs.google.com/forms/d/1Y8fR-iir_rnC6xXmhckj2rMfgSO8K8lcwNoKwHjUa4E/viewform'
-);
+    $key = $_GET['url'];
+    if(array_key_exists($key, $urls)) {
+        $url = $urls[$key];
+    } elseif(empty($key)) {
+        $url = DEFAULT_URL;
+    } else{
+        $url = NOTFOUND_URL;
+    }
 
-# CHANGE NOTHING BELOW HERE
-
-define('DEFAULT_URL', 'http://entrepreneur-club.org/');
-define('NOTFOUND_URL', 'http://entrepreneur-club.org/notfound');
-
-$key = $_GET['url'];
-if(array_key_exists($key, $urls)) {
-    $url = $urls[$key];
-} elseif(empty($key)) {
-    $url = DEFAULT_URL;
-} else{
-    $url = NOTFOUND_URL;
-}
-
-header("Location: " . $url);
-
+    header("Location: " . $url);
 ?>
