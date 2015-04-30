@@ -3,7 +3,8 @@ Hosted at <http://eth.ec>.
 
 ## Add an URL
 * ssh to hostpoint server
-* add url to `urls.txt` in format `short: http://long.url.example.org/`
+* add url to `www/eth.ec/urls.txt` in format `short: http://long.url.example.org/`
+* you can add comment lines to the file. They have to begin with `#`.
 
 **Bang** - it works!
 
