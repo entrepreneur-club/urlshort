@@ -6,7 +6,9 @@ Hosted at <http://eth.ec>.
 * add url to `www/eth.ec/urls.txt` in format `short: http://long.url.example.org/`
 * you can add comment lines to the file. They have to begin with `#`.
 
-**Bang** - it works!
+**Bang** - it works! Reach your URL now as <http://eth.ec/short> which will redirect you.
+
+**The short name has to be at least two characters in length.**
 
 or - just ask `it at entrepreneur-club.org`. They will do it for you.
 
