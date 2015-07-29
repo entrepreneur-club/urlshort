@@ -22,6 +22,5 @@
     } else{
         $url = NOTFOUND_URL;
     }
-
     header("Location: " . $url);
 ?>

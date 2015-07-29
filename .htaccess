@@ -4,11 +4,7 @@
 </IfModule>
 
 <Files "urls.txt">
-	Order Allow,Deny
 	Deny from all
 </Files>
 
-<Directory ".git">
-	Order Allow,Deny
-	Deny from all
-</Directory>
+RedirectMatch 404 ^.*/.git/.*$
